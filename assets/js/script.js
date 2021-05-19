@@ -1,16 +1,19 @@
 $(document).ready(function () {
 
     $('#btnBusqueda').click(function () {
-        let id = $('#idPokemon').value;
-        let metrica1 = /^[1-9]/ + 3;
-
-        if (metrica1.test(id)) {
+        let id = $('#idPokemon')[0].value;
+        let metrica1 = /^[1-9]+$/;
+        if (id.match(metrica1)) {
+            alert('ingresado correctamente');
+            //llamar a la función
 
         } else {
             alert('Tiene que ingresar un número');
-            $('p').text('Tiene que ingresar un numero');
+
         }
-    })
+    });
+
+    //crear lafunción
 
 
 });
