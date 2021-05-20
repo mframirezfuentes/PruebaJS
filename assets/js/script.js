@@ -32,7 +32,7 @@ $(document).ready(function () {
                 $('#infoHeroe').append(`<div></div><p >Género: ${data.gender}</p></div>`);
                 $('#infoHeroe').append(`<div><p>Raza: ${data.race}</p></div>`);
                 $('#infoHeroe').append(`<div><p >Altura: ${data.height[1]}</p></div>`);
-                $('#infoHeroe').append(`<div><p>Peso: ${data.height[1]}</p></div>`);
+                $('#infoHeroe').append(`<div><p>Peso: ${data.weight[1]}</p></div>`);
             }
         });
     }
@@ -70,7 +70,7 @@ $(document).ready(function () {
                         indexLabelFontSize: 18,
                         radius: 80,
                         indexLabel: "{label} - {y}",
-                        yValueFormatString: "###0.0\"%\"",
+                       /*  yValueFormatString: "###0.0\"%\"", */
                         click: explodePie,
                         dataPoints: [{
                                 y: `${data.intelligence}`,
