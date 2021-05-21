@@ -4,6 +4,7 @@ $(document).ready(function () {
     })
     let id = $('#idHeroe')[0].value;
     let idHeroe = parseInt(id);
+    $('#superHeroe').toggle();
 
     
     //Se va a buscar la imagen del super heroe
@@ -114,6 +115,7 @@ $(document).ready(function () {
     };
 
     $('#btnBusqueda').click(function () {
+        $('#superHeroe').show();
         id = $('#idHeroe')[0].value;
         idHeroe = parseInt(id);
         let metrica1 = /^[0-9]/g;
