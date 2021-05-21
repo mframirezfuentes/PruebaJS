@@ -12,14 +12,14 @@ $(document).ready(function () {
             url: `https://www.superheroapi.com/api.php/10159429364869539/${idHeroe}/image`,
             dataType: "json",
             success: function (data) {
-                $('#imgHeroe').append(`<img src="${data.url}" alt="90%" width="100%" class=" mt-3"></img>`);
+                $('#imgHero').append(`<img src="${data.url}" alt="100%" width="110%"></img>`);
 
             }
         });
     }
 
     //las conexiones del super heroe con otros super heroes
-    
+
     const apariencia = () => {
         id = $('#idHeroe')[0].value;
         idHeroe = parseInt(id);
@@ -70,7 +70,7 @@ $(document).ready(function () {
                         indexLabelFontSize: 18,
                         radius: 80,
                         indexLabel: "{label} - {y}",
-                       /*  yValueFormatString: "###0.0\"%\"", */
+                        /*  yValueFormatString: "###0.0\"%\"", */
                         click: explodePie,
                         dataPoints: [{
                                 y: `${data.intelligence}`,
@@ -113,21 +113,25 @@ $(document).ready(function () {
     };
 
     $('#btnBusqueda').click(function () {
+
         id = $('#idHeroe')[0].value;
         idHeroe = parseInt(id);
         let metrica1 = /^[0-9]/g;
         if (id.match(metrica1) >= 1 && id.match(metrica1) < 732) {
             $('#busqueda').hide();
+           
+           
+
 
             //la imagen del Heroe
-            $('#imfoHeroe').append(`<p>Super Heroe Encontrado</p>`);
+             $('#imfoHeroe').append(`<p>Super Heroe Encontrado</p>`);
             //imagen del super heroe
-            imgHeroe();
+             imgHeroe();
             //info del super heroe
-            apariencia();
-            conexiones();           
-            $('#estadisticaHeore').append(`<div id="chartContainer" style="height: 370px; width: 100%;"></div>`).append(grafico());
-
+              apariencia();
+             conexiones();
+              $('#estadisticaHeore').append(`<div id="chartContainer" style="height: 370px; width: 100%;"></div>`).append(grafico());
+            
         } else {
             alert('Tiene que ingresar un número, entre 1 y 731');
 

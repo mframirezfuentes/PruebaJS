@@ -35,9 +35,7 @@
             <p>Ingresa el número del SuperHeroe a buscar</p>
             <form action="">
                 <div class="mb-3 form-group">
-                    <input type="text" name="superHeroe" id="idHeroe" class="form-control" min="1" max="731" maxlength="3"
-                        minlength="1">
-                    <p id='error'></p>
+                    <input type="text" name="superHeroe" id="idHeroe" class="form-control" >
                 </div>
 
                 <input type="button" value="Buscar" class="btn btn-primary" id="btnBusqueda">
@@ -48,14 +46,31 @@
     </section>
     <section id='superHeroe' class="container">
         <div class="col-lg-12 col-m-12 col-s-12 mt-5 " id='heroe'>
-            <div class="col-lg-5 col-m-5 col-s-12 " id="imgHeroe">
-            </div>
-            <div class="col-lg-7 col-m-7 col-s-12 mt-5 " id="infoHeroe">
-               
+            <div class="card-group mt-5">
+                <div class="card mb-3 mt-5" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4" id="imgHero">
+                            
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="tituloHero"></h5>
+                                <p class="card-text" id="infoHeroe"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 mt-5" style="max-width: 540px;">
+                    <div id='estadisticaHeore'>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="col-lg-4 col-m-4 col-s-12 display-flex" id='estadisticaHeore'>           
-            </div>
+
+
     </section>
 
 
