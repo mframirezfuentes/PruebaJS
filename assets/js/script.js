@@ -1,12 +1,15 @@
-/* $('#resultados').hide(); */
 $(document).ready(function () {
+    $('form').submit(function (event) {
+        event.preventDefault();
+    })
     let id = $('#idHeroe')[0].value;
     let idHeroe = parseInt(id);
 
+    
     //Se va a buscar la imagen del super heroe
     const imgHeroe = (id) => {
-        id = $('#idHeroe')[0].value;
-        idHeroe = parseInt(id);
+        /* id = $('#idHeroe')[0].value;
+        idHeroe = parseInt(id); */
         $.ajax({
             type: "GET",
             url: `https://www.superheroapi.com/api.php/10159429364869539/${idHeroe}/image`,
@@ -17,12 +20,10 @@ $(document).ready(function () {
             }
         });
     }
-
     //las conexiones del super heroe con otros super heroes
-
     const apariencia = () => {
-        id = $('#idHeroe')[0].value;
-        idHeroe = parseInt(id);
+       /*  id = $('#idHeroe')[0].value;
+        idHeroe = parseInt(id); */
         $.ajax({
             type: "GET",
             url: `https://www.superheroapi.com/api.php/10159429364869539/${idHeroe}/appearance`,
@@ -37,8 +38,8 @@ $(document).ready(function () {
         });
     }
     const conexiones = () => {
-        id = $('#idHeroe')[0].value;
-        idHeroe = parseInt(id);
+      /*   id = $('#idHeroe')[0].value;
+        idHeroe = parseInt(id); */
         $.ajax({
             type: "GET",
             url: `https://www.superheroapi.com/api.php/10159429364869539/${idHeroe}/connections`,
@@ -50,8 +51,8 @@ $(document).ready(function () {
     }
 
     const grafico = () => {
-        id = $('#idHeroe')[0].value;
-        idHeroe = parseInt(id);
+       /*  id = $('#idHeroe')[0].value;
+        idHeroe = parseInt(id); */
         $.ajax({
             type: "GET",
             url: `https://www.superheroapi.com/api.php/10159429364869539/${idHeroe}/powerstats`,
@@ -113,30 +114,23 @@ $(document).ready(function () {
     };
 
     $('#btnBusqueda').click(function () {
-
         id = $('#idHeroe')[0].value;
         idHeroe = parseInt(id);
         let metrica1 = /^[0-9]/g;
         if (id.match(metrica1) >= 1 && id.match(metrica1) < 732) {
             $('#busqueda').hide();
-           
-           
-
-
             //la imagen del Heroe
-             $('#imfoHeroe').append(`<p>Super Heroe Encontrado</p>`);
+            $('#tituloHero').append(`<p>Super Heroe Encontrado</p>`);
             //imagen del super heroe
-             imgHeroe();
+            imgHeroe();
             //info del super heroe
-              apariencia();
-             conexiones();
-              $('#estadisticaHeore').append(`<div id="chartContainer" style="height: 370px; width: 100%;"></div>`).append(grafico());
-            
+            apariencia();
+            conexiones();
+            $('#estadisticaHeore').append(`<div id="chartContainer" style="height: 370px; width: 100%;"></div>`).append(grafico());
+            construccionTabla();
         } else {
             alert('Tiene que ingresar un número, entre 1 y 731');
-
         }
     });
-
-
+ 
 });
