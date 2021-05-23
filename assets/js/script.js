@@ -118,7 +118,7 @@ $(document).ready(function () {
         $('#superHeroe').show();
         id = $('#idHeroe')[0].value;
         idHeroe = parseInt(id);
-        let metrica1 = /^[0-9]/g;
+        let metrica1 = /^\d{3}/;
         if (id.match(metrica1) >= 1 && id.match(metrica1) < 732) {
             $('#busqueda').hide();
             //la imagen del Heroe
