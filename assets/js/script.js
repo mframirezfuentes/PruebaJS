@@ -129,7 +129,7 @@ $(document).ready(function () {
             apariencia();
             conexiones();
             $('#estadisticaHeore').append(`<div id="chartContainer" style="height: 370px; width: 100%;"></div>`).append(grafico());
-            construccionTabla();
+         
         } else {
             alert('Tiene que ingresar un número, entre 1 y 731');
         }
